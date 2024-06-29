@@ -153,6 +153,7 @@ namespace BitTorrent
         Path actualFilePath(int index) const override;
         qlonglong fileSize(int index) const override;
         PathList filePaths() const override;
+        PathList actualFilePaths() const override;
         QVector<DownloadPriority> filePriorities() const override;
 
         TorrentInfo info() const override;
@@ -210,6 +211,7 @@ namespace BitTorrent
         int maxSeedingTime() const override;
         int maxInactiveSeedingTime() const override;
         qreal realRatio() const override;
+        qreal popularity() const override;
         int uploadPayloadRate() const override;
         int downloadPayloadRate() const override;
         qlonglong totalPayloadUpload() const override;
@@ -268,6 +270,7 @@ namespace BitTorrent
 
         void handleAlert(const lt::alert *a);
         void handleStateUpdate(const lt::torrent_status &nativeStatus);
+        void handleQueueingModeChanged();
         void handleCategoryOptionsChanged();
         void handleAppendExtensionToggled();
         void handleUnwantedFolderToggled();

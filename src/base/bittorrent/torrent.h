@@ -228,6 +228,7 @@ namespace BitTorrent
         virtual void setShareLimitAction(ShareLimitAction action) = 0;
 
         virtual PathList filePaths() const = 0;
+        virtual PathList actualFilePaths() const = 0;
 
         virtual TorrentInfo info() const = 0;
         virtual bool isFinished() const = 0;
@@ -282,6 +283,7 @@ namespace BitTorrent
         virtual int maxSeedingTime() const = 0;
         virtual int maxInactiveSeedingTime() const = 0;
         virtual qreal realRatio() const = 0;
+        virtual qreal popularity() const = 0;
         virtual int uploadPayloadRate() const = 0;
         virtual int downloadPayloadRate() const = 0;
         virtual qlonglong totalPayloadUpload() const = 0;
